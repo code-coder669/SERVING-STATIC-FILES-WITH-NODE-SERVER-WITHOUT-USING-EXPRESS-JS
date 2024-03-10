@@ -8,8 +8,13 @@
   justify-content: $justify;
 }
 
+@mixin gridContainer($cardwidth) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cardwidth, 1fr));
+}
+
 * {
-  overflow: hidden;
+  list-style-type: none;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -19,9 +24,9 @@
 
 body {
   scroll-behavior: smooth;
-  color: $text-color-primary;
-  min-height: 100vh;
   list-style-type: none;
+  overflow-y: scroll;
+  background: whitesmoke;
 }
 
 header {
@@ -57,7 +62,7 @@ header {
         }
       }
     }
-    .contact-btn a{
+    .contact-btn a {
       display: block;
       text-decoration: none;
       // font-weight: bold;
@@ -67,10 +72,100 @@ header {
       border: 1px solid $text-color-primary;
       transition: 250ms ease-in-out;
       background-color: $text-color-primary;
-      &:hover{
+      &:hover {
         border: 1px solid $text-color-primary;
-        background-color:transparent;
-        color:  $text-color-primary;
+        background-color: transparent;
+        color: $text-color-primary;
+      }
+    }
+  }
+}
+
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0, 28, 77, 0.192), rgba(0, 0, 0, 0.529)),
+    url("./img/8901760.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  .container {
+    @include container(90%, center, center);
+    height: 100%;
+    color: $text-color-primary;
+    div {
+      text-align: center;
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 500;
+        font-family: $stylish-font;
+      }
+
+      p {
+        // font-family: $stylish-font;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+.testimonial-section {
+  margin: 100px 0;
+  .container {
+    @include container(90%, "", center);
+    flex-direction: column;
+    div {
+      margin-bottom: 50px;
+      h2 {
+        text-align: center;
+        color: $text-color-secondary;
+        font-size: $section-header-font-size;
+      }
+
+      p {
+        text-align: center;
+        color: $text-color-tertiary;
+        font-size: $sub-header-text-font-size;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .featured-courses-grid-container {
+    @include gridContainer(350px);
+    gap: 20px;
+
+    .course-grid-card {
+      background: $text-color-primary;
+      border-radius: 10px;
+    }
+
+    .course-img {
+      position: relative;
+      margin-bottom: 20px;
+      background: #151515;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      height: fit-content;
+      img {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+
+      p.readmore{
+        font-weight: bold;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }

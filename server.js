@@ -92,6 +92,13 @@ const server = http.createServer((req, res) => {
 
     imageReadStream.pipe(res);
 
+  }else if (req.url.match(/.jpeg$/)){
+    let imagePath = path.join(__dirname, "FrontEnd", req.url);
+    let imageReadStream = fs.createReadStream(imagePath);
+
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "image/jpg");
+    imageReadStream.pipe(res);
   }else if (req.url.match(/.png$/)){
     let imagePath = path.join(__dirname, "FrontEnd", req.url);
     let imageReadStream = fs.createReadStream(imagePath);
@@ -99,7 +106,9 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "image/png");
     imageReadStream.pipe(res);
-  }else if (req.url.match(/.svg$/)){
+  }
+  
+  else if (req.url.match(/.svg$/)){
     let imagePath = path.join(__dirname, "FrontEnd", req.url);
     let imageReadStream = fs.createReadStream(imagePath);
 

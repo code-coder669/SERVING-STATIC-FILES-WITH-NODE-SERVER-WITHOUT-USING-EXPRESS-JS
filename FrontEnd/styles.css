@@ -1,5 +1,5 @@
 * {
-  overflow: hidden;
+  list-style-type: none;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,9 +8,9 @@
 
 body {
   scroll-behavior: smooth;
-  color: #fff;
-  min-height: 100vh;
   list-style-type: none;
+  overflow-y: scroll;
+  background: whitesmoke;
 }
 
 header {
@@ -67,4 +67,96 @@ header nav .contact-btn a:hover {
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
+}
+
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0, 28, 77, 0.192), rgba(0, 0, 0, 0.529)), url("./img/8901760.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.hero .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+}
+.hero .container div {
+  text-align: center;
+}
+.hero .container div h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  font-family: cursive;
+}
+.hero .container div p {
+  font-weight: 100;
+}
+
+.testimonial-section {
+  margin: 100px 0;
+}
+.testimonial-section .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: "";
+  justify-content: center;
+  flex-direction: column;
+}
+.testimonial-section .container div {
+  margin-bottom: 50px;
+}
+.testimonial-section .container div h2 {
+  text-align: center;
+  color: #3e3e3e;
+  font-size: 2rem;
+}
+.testimonial-section .container div p {
+  text-align: center;
+  color: #646464;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.testimonial-section .featured-courses-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+.testimonial-section .featured-courses-grid-container .course-grid-card {
+  background: #fff;
+  border-radius: 10px;
+}
+.testimonial-section .featured-courses-grid-container .course-img {
+  position: relative;
+  margin-bottom: 20px;
+  background: #151515;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.testimonial-section .featured-courses-grid-container .course-img img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.testimonial-section .featured-courses-grid-container .course-img img:hover {
+  opacity: 0.2;
+}
+.testimonial-section .featured-courses-grid-container .course-img p.readmore {
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=styles.css.map */
