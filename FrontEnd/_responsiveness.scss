@@ -1,0 +1,30 @@
+@media (max-width: 720px) {
+  header {
+    position: relative;
+
+    nav {
+      div.navbar-container {
+        padding: 50px 10px;
+        display: block !important;
+        position: fixed;
+        top: 0px;
+        right: 0;
+        z-index: 999 !important;
+        height: 100vh !important;
+        background: #010016;
+        width: 50% !important;
+
+        .navbar {
+          display: block;
+        }
+      }
+
+      .logo {
+        display: block;
+        a {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

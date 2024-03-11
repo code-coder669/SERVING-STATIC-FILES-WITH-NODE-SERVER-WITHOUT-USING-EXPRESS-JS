@@ -1,3 +1,28 @@
+@media (max-width: 720px) {
+  header {
+    position: relative;
+  }
+  header nav div.navbar-container {
+    padding: 50px 10px;
+    display: block !important;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    z-index: 999 !important;
+    height: 100vh !important;
+    background: #010016;
+    width: 50% !important;
+  }
+  header nav div.navbar-container .navbar {
+    display: block;
+  }
+  header nav .logo {
+    display: block;
+  }
+  header nav .logo a {
+    text-align: center;
+  }
+}
 * {
   list-style-type: none;
   padding: 0;
@@ -15,6 +40,7 @@ body {
 
 header {
   background: #2a2a2a;
+  height: 70px;
 }
 header nav {
   width: 90%;
@@ -23,6 +49,18 @@ header nav {
   align-items: center;
   justify-content: space-between;
   flex: 1;
+  padding: 15px 0;
+}
+header nav div {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav .logo {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 header nav .logo a {
   text-decoration: none;
@@ -38,7 +76,6 @@ header nav .navbar {
   justify-content: center;
   text-decoration: none;
   color: #fff;
-  padding: 10px 0;
 }
 header nav .navbar .navitem a {
   display: block;
@@ -70,7 +107,7 @@ header nav .contact-btn a:hover {
 }
 
 .hero {
-  height: 90vh;
+  height: 100vh;
   background: linear-gradient(rgba(0, 28, 77, 0.192), rgba(0, 0, 0, 0.529)), url("./img/8901760.jpg");
   background-size: cover;
   background-repeat: no-repeat;

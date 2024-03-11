@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./responsiveness";
 
 @mixin container($containerwith, $align, $justify) {
   width: $containerwith;
@@ -31,21 +32,29 @@ body {
 
 header {
   background: $bg-color;
+  height: 70px;
 
   nav {
     @include container(90%, center, space-between);
     flex: 1;
-
-    .logo a {
-      text-decoration: none;
-      color: $text-color-primary;
-      font-size: 2rem;
+    padding: 15px 0;
+    div {
+      @include container(100%, center, space-between);
+    }
+    
+    .logo {
+      max-width: fit-content;
+      a {
+        text-decoration: none;
+        color: $text-color-primary;
+        font-size: 2rem;
+      }
     }
     .navbar {
       @include container(fit-content, center, center);
       text-decoration: none;
       color: $text-color-primary;
-      padding: 10px 0;
+      // padding: 10px 0;
 
       .navitem a {
         display: block;
@@ -82,7 +91,7 @@ header {
 }
 
 .hero {
-  height: 90vh;
+  height: 100vh;
   background: linear-gradient(rgba(0, 28, 77, 0.192), rgba(0, 0, 0, 0.529)),
     url("./img/8901760.jpg");
   background-size: cover;
@@ -159,7 +168,7 @@ header {
         }
       }
 
-      p.readmore{
+      p.readmore {
         font-weight: bold;
         margin: 0;
         position: absolute;
